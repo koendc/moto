@@ -401,6 +401,7 @@ class ResponseObject(_TemplateEnvironmentMixin):
 
         if key:
             headers.update(key.metadata)
+            headers.update(key.response_dict)
             return 200, headers, key.value
         else:
             return 404, headers, ""
